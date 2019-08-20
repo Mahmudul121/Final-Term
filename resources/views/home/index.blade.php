@@ -46,7 +46,7 @@
                         <a class="nav-link" href="{{route('login.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Log in</h3></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('home.signup')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SIGN UP</h3></a>
+                        <a class="nav-link" href=""><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SIGN UP</h3></a>
                     </li>
                    
                    

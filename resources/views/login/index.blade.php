@@ -47,7 +47,7 @@
                         <a class="nav-link" href="{{route('home.index')}}"><h3>BLU</h3></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('home.signup')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIGN UP</h3></a>
+                        <a class="nav-link" href=""><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIGN UP</h3></a>
                     </li>
                    
                    
@@ -73,7 +73,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="login" value="Login"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{{route('login.forgetpass')}}">Forget Password</a></td>
+                <td><input type="submit" name="login" value="Login"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="">Forget Password</a></td>
                 
             </tr>
         </table>
