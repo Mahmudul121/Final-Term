@@ -24,6 +24,14 @@ Route::post('/home/registration', 'HomeController@create');
 Route::get('/home/update', 'HomeController@update')->name('home.update');
 Route::post('/home/update', 'HomeController@updatepost');
 Route::get('/home/allmember', 'HomeController@allmember')->name('home.allmember');
+Route::get('/home/delete/{id}', 'HomeController@delete')->name('home.delete');
+Route::get('/home/addcar', 'HomeController@addcar')->name('home.addcar');
+Route::post('/home/addcar', 'HomeController@addcarpost');
+
+
+
+
+
 
 Route::get('/member', 'MemberController@index')->name('member.index');
 Route::get('/member/update', 'MemberController@update')->name('member.update');

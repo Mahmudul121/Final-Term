@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Register;
+use App\Car;
 
 class HomeController extends Controller
 {
@@ -41,6 +42,23 @@ class HomeController extends Controller
 	}
 	public function allmember(Request $req){
 		$data=Register::where('type',"Member")->get();
-		return view('home.update',['data'=>$data[0]]);
+		return view('home.allmember',['data'=>$data]);
+	}
+	public function delete(Request $req,$id){
+		Register::destroy($id);
+		$data=Register::where('type',"Member")->get();
+		return view('home.allmember',['data'=>$data]);
+	}
+	public function addcar(Request $req){
+		
+		return view('home.addcar');
+	}
+	public function addcarpost(Request $req){
+		$car=new Car();
+		$car->carname=$req->carname;
+		$car->category=$req->type;
+		$car->cost=$req->cost;
+		$car->save();
+		return redirect()->route('home.index');
 	}
 }

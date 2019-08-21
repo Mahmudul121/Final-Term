@@ -31,22 +31,19 @@
      #bg-image:hover{
         
      }
+     .abs{
+        font-size: 20px;
+     }
     </style>
 
 
-    <title>Admin</title>
+    <title>Add Car</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('home.allmember')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp; AllMember</h3></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('home.update')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UpdateInfo</h3></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('home.addcar')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AddCar</h3></a>
+                        <a class="nav-link" href="{{route('home.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Home</h3></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Log out</h3></a>
@@ -57,6 +54,35 @@
             
                 </ul>
             </nav>    
-    <h1> Welcome Admin</h1>
+    <form method="post">
+        {{csrf_field()}}
+        <table class="abs" width="60%" align="center">
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" name="carname" required></td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td>Categories:</td>
+                <td>
+                    <select name="type" required>
+                      <option value="Privatecar">Private Car</option>
+                      <option value="Microbus">Microbus</option>
+                      <option value="Pickup">Pick-up</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td>Cost per Day: </td>
+                <td><input type="number" name="cost" required> </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="Add"> </td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
