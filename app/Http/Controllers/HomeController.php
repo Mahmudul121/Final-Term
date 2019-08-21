@@ -24,7 +24,23 @@ class HomeController extends Controller
 		return redirect()->route('login.index');
 	}
 	public function update(Request $req){
-		
-		return view('home.update');
+		$data=Register::where('email',$req->session()->get('email'))->get();
+		return view('home.update',['data'=>$data[0]]);
+	}
+	public function updatepost(Request $req){
+		$data=Register::where('email',$req->session()->get('email'))->value("id");
+		echo "$data";
+
+		$data2=Register::find($data);
+		$data2->name=$req->username;
+		$data2->email=$req->email;
+		$data2->password=$req->password;
+		$data2->save();
+
+		return redirect()->route('logout.index');
+	}
+	public function allmember(Request $req){
+		$data=Register::where('type',"Member")->get();
+		return view('home.update',['data'=>$data[0]]);
 	}
 }

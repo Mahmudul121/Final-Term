@@ -22,7 +22,11 @@ Route::get('/home', 'HomeController@index')->name('home.index');
 Route::get('/home/registration', 'HomeController@registration')->name('home.registration');
 Route::post('/home/registration', 'HomeController@create');
 Route::get('/home/update', 'HomeController@update')->name('home.update');
+Route::post('/home/update', 'HomeController@updatepost');
+Route::get('/home/allmember', 'HomeController@allmember')->name('home.allmember');
 
 Route::get('/member', 'MemberController@index')->name('member.index');
+Route::get('/member/update', 'MemberController@update')->name('member.update');
+Route::post('/member/update', 'MemberController@updatepost');
 
 Route::get('/logout', 'LogoutController@index')->name('logout.index');

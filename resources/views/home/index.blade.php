@@ -40,6 +40,9 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('home.allmember')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp; AllMember</h3></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('home.update')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UpdateInfo</h3></a>
                     </li>
                     <li class="nav-item">
@@ -51,7 +54,6 @@
             
                 </ul>
             </nav>    
-                      
-    Welcome Admin  
+    <h1> Welcome Admin</h1>
 </body>
 </html>
