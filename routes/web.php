@@ -15,9 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'HomeController@index')->name('home.index');
-
 Route::get('/login', 'LoginController@index')->name('login.index');
 Route::post('/login', 'LoginController@verify');
+
+Route::get('/home', 'HomeController@index')->name('home.index');
+Route::get('/home/registration', 'HomeController@registration')->name('home.registration');
+Route::post('/home/registration', 'HomeController@create');
+Route::get('/home/update', 'HomeController@update')->name('home.update');
+
+Route::get('/member', 'MemberController@index')->name('member.index');
 
 Route::get('/logout', 'LogoutController@index')->name('logout.index');

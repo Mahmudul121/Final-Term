@@ -31,17 +31,18 @@
      #bg-image:hover{
         
      }
+     .abs{
+        font-size: 20px;
+     }
     </style>
 
 
-    <title>Admin</title>
+    <title>UpdateInfo</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('home.update')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UpdateInfo</h3></a>
-                    </li>
+                
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Log out</h3></a>
                     </li>
@@ -50,8 +51,46 @@
                    
             
                 </ul>
-            </nav>    
-                      
-    Welcome Admin  
+            </nav> 
+            <form method="post">
+                {{csrf_field()}}
+            <table class="abs" width="60%" align="center">
+			<tr>
+				<td>Username: </td>
+				<td><input type="text" name="username" value="" required></td>
+				<td></td>
+			</tr>
+            <tr><td>&nbsp;</td></tr>
+			<tr>
+				<td>Email: </td>
+				<td><input type="email" name="email" required></td>
+				<td> </td>
+			</tr>
+            <tr><td>&nbsp;</td></tr>
+			<tr>
+				<td>Type:</td>
+				<td>
+					<select name="type" required>
+					  <option value="Admin">Admin</option>
+					  <option value="Member">Member</option>
+					</select>
+				</td>
+				<td></td>
+			</tr>
+            <tr><td>&nbsp;</td></tr>
+			<tr>
+				<td>Password: </td>
+				<td><input type="password" name="password" required> </td>
+				<td></td>
+			</tr>
+            <tr><td>&nbsp;</td></tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="submit" value="Submit"> </td>
+				<td></td>
+			</tr>
+		</table>   
+        </form>
+                        
 </body>
 </html>

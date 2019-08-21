@@ -44,10 +44,7 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('home.index')}}"><h3>BLU</h3></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=""><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIGN UP</h3></a>
+                        <a class="nav-link" href=""><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registration</h3></a>
                     </li>
                    
                    
@@ -73,7 +70,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="login" value="Login"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="">Forget Password</a></td>
+                <td><input type="submit" name="login" value="Login"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{{route('home.registration')}}">Registration</a></td>
                 
             </tr>
         </table>

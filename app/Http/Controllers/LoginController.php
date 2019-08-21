@@ -13,25 +13,26 @@ class LoginController extends Controller
 	}
 	public function verify(Request $req){
 		
-		/*$result = DB::table('freelancer')->where('email', $req->email)
+		$result = DB::table('user')->where('email', $req->email)
 				->where('password', $req->password)
 				->get();
 		if(count($result) > 0)
 		{
-			if($result[0]->type=="Freelancer")
+			if($result[0]->type=="Admin")
 			{
-				return redirect()->route('freelancer.index');
+				$req->session()->put('email', $req->email);
+				return redirect()->route('home.index');
 			}
-			elseif ($result[0]->type=="Client") {
-				//$req->session()->put('email', $req->email);
-				return redirect()->route('client.index');
+			elseif ($result[0]->type=="Member") {
+				$req->session()->put('email', $req->email);
+				return redirect()->route('member.index');
 			}
 		}
 		else
 		{
 			$req->session()->flash('msg', 'invalid username or password');
 			return redirect()->route('login.index');
-		}*/
+		}
 	}
 	
 	
