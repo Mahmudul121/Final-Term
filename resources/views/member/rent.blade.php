@@ -37,52 +37,57 @@
     </style>
 
 
-    <title>UpdateInfo</title>
+    <title>Rent Car</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('home.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Back</h3></a>
+                        <a class="nav-link" href="{{route('member.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home</h3></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Log out</h3></a>
                     </li>
-                    
-                   
-                   
             
                 </ul>
             </nav> 
-            <form method="post">
-                {{csrf_field()}}
-            <table class="abs" width="60%" align="center">
-			<tr>
-				<td>Username: </td>
-				<td><input type="text" name="username" value="{{$data['name']}}" required></td>
-				<td></td>
-			</tr>
+    <form method="post">
+        {{csrf_field()}}
+        <table class="abs"  width="60%" >
+            <tr>
+            <td align="right">Car Name</td>
+            <td><input type="text" name="name" readonly value="{{$data['carname']}}"></td>
+            </tr>
             <tr><td>&nbsp;</td></tr>
-			<tr>
-				<td>Email: </td>
-				<td><input type="email" name="email" value="{{$data['email']}}" required></td>
-				<td> </td>
-			</tr>
+            <tr>
+                <td align="right">From</td>
+                <td><input type="date" name="from" value="{{$data['from']}}"></td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td align="right">To</td>
+                <td><input type="date" name="to" value="{{$data['to']}}"></td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td align="right">Cost per Day</td>
+                <td><input type="number" name="cost" readonly value="{{$data['cost']}}"></td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td align="right">Total seat</td>
+                <td><input type="number" name="seat" readonly value="{{$data['seatno']}}"></td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td align="right"></td>
+                <td><input type="submit" name="rent" value="Add"></td>
+            </tr>
             
-            <tr><td>&nbsp;</td></tr>
-			<tr>
-				<td>Password: </td>
-				<td><input type="password" name="password" value="{{$data['password']}}" required> </td>
-				<td></td>
-			</tr>
-            <tr><td>&nbsp;</td></tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" name="submit" value="Submit"> </td>
-				<td></td>
-			</tr>
-		</table>   
-        </form>
+            
+
+        </table> 
+    </form> 
                         
 </body>
 </html>

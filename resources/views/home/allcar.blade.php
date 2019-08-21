@@ -37,7 +37,7 @@
     </style>
     
 
-    <title>ALL Member</title>
+    <title>ALL Car</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
@@ -56,24 +56,26 @@
     <form method="post">
         {{csrf_field()}}
 
-        <h1 align="center">Member List:</h1><br/>
+        <h1 align="center">Car List:</h1><br/>
         <br/>
         <table class="abs" border="2" width="60%" align="center">
             <tr>
             <td align="center">ID</td>
             <td align="center">Name</td>
-            <td align="center">Email</td>
-            <td align="center">Type</td>
+            <td align="center">Category</td>
+            <td align="center">Cost</td>
+            <td align="center">Total Sseat</td>
             <td align="center">Action</td>
             </tr>
             @foreach($data as $value)
             <tr>
                 <td align="center">{{$value['id']}}</td>
-                <td align="center">{{$value['name']}}</td>
-                <td align="center">{{$value['email']}}</td>
-                <td align="center">{{$value['type']}}</td>
+                <td align="center">{{$value['carname']}}</td>
+                <td align="center">{{$value['category']}}</td>
+                <td align="center">{{$value['cost']}}</td>
+                <td align="center">{{$value['seatno']}}</td>
                 <td align="center">
-                    <a href="{{route('home.delete', $value['id'])}}">Delete</a>
+                    <a href="{{route('home.deletecar', $value['id'])}}">Delete</a>
                 </td>
             </tr>
             @endforeach

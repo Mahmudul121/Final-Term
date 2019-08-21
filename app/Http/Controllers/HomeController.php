@@ -58,7 +58,19 @@ class HomeController extends Controller
 		$car->carname=$req->carname;
 		$car->category=$req->type;
 		$car->cost=$req->cost;
+		$car->seatno=$req->seatno;
 		$car->save();
 		return redirect()->route('home.index');
 	}
+	public function allcar(Request $req){
+		$data=Car::All();
+		return view('home.allcar',['data'=>$data]);
+	}
+	public function deletecar(Request $req,$id){
+		Car::destroy($id);
+		$data=Car::All();
+		return view('home.allcar',['data'=>$data]);
+	}
+
+
 }

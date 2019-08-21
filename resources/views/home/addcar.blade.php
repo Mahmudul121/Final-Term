@@ -79,6 +79,11 @@
             </tr>
             <tr><td>&nbsp;</td></tr>
             <tr>
+                <td>Seat Number: </td>
+                <td><input type="number" name="seatno" required> </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
                 <td></td>
                 <td><input type="submit" name="submit" value="Add"> </td>
             </tr>

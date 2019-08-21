@@ -37,52 +37,53 @@
     </style>
 
 
-    <title>UpdateInfo</title>
+    <title>Member</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('home.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Back</h3></a>
+                        <a class="nav-link" href="{{route('member.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home</h3></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Log out</h3></a>
                     </li>
-                    
-                   
-                   
             
                 </ul>
-            </nav> 
-            <form method="post">
-                {{csrf_field()}}
-            <table class="abs" width="60%" align="center">
-			<tr>
-				<td>Username: </td>
-				<td><input type="text" name="username" value="{{$data['name']}}" required></td>
-				<td></td>
-			</tr>
+            </nav>
+    <h1 align="center"> Welcome To Online Car Rent</h1>   
+    <form method="post">
+           {{csrf_field()}}
+           <table class="abs"  width="60%" align="center">
+            <tr><td align="center">&nbsp;<h1>{{session('homee')}}<h1/></td></tr>
             <tr><td>&nbsp;</td></tr>
-			<tr>
-				<td>Email: </td>
-				<td><input type="email" name="email" value="{{$data['email']}}" required></td>
-				<td> </td>
-			</tr>
+            <tr>
+            <td align="center">Carname</td>
+            <td align="center">From</td>
+            <td align="center">To</td>
             
+            </tr>
             <tr><td>&nbsp;</td></tr>
-			<tr>
-				<td>Password: </td>
-				<td><input type="password" name="password" value="{{$data['password']}}" required> </td>
-				<td></td>
-			</tr>
-            <tr><td>&nbsp;</td></tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" name="submit" value="Submit"> </td>
-				<td></td>
-			</tr>
-		</table>   
-        </form>
+            
+            <tr>
+                <td align="center">
+                    <select name="carname">
+                        @foreach($car as $value)
+                        <option value="{{$value}}">{{$value}}</option>
+                        @endforeach
+                    </select>
+                </td>
+                <td align="center"><input type="date" name="from"></td>
+                <td align="center"><input type="date" name="to"></td>
+                <td align="center"><input type="submit" name="view" value="View"></td>
+                
+            </tr>
+            
+            
+            
+
+        </table> 
+       </form>r 
                         
 </body>
 </html>

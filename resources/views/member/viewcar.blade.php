@@ -37,13 +37,13 @@
     </style>
     
 
-    <title>ALL Member</title>
+    <title>ALL Car</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('home.index')}}"><h3>Home</h3></a>
+                        <a class="nav-link" href="{{route('member.index')}}"><h3>Home</h3></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Log Out</h3></a>
@@ -56,24 +56,33 @@
     <form method="post">
         {{csrf_field()}}
 
-        <h1 align="center">Member List:</h1><br/>
+        <h1 align="center">Member Car List:</h1><br/>
         <br/>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="search">
+            <option value="Privatecar">Privatecar</option>
+            <option value="Microbus">Microbus</option>
+            <option value="Pickup">Pickup</option>
+        </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" name="done" value="Search"></h3>
         <table class="abs" border="2" width="60%" align="center">
+
             <tr>
             <td align="center">ID</td>
             <td align="center">Name</td>
-            <td align="center">Email</td>
-            <td align="center">Type</td>
+            <td align="center">Category</td>
+            <td align="center">Cost</td>
+            <td align="center">Total Sseat</td>
             <td align="center">Action</td>
             </tr>
             @foreach($data as $value)
             <tr>
                 <td align="center">{{$value['id']}}</td>
-                <td align="center">{{$value['name']}}</td>
-                <td align="center">{{$value['email']}}</td>
-                <td align="center">{{$value['type']}}</td>
+                <td align="center">{{$value['carname']}}</td>
+                <td align="center">{{$value['category']}}</td>
+                <td align="center">{{$value['cost']}}</td>
+                <td align="center">{{$value['seatno']}}</td>
                 <td align="center">
-                    <a href="{{route('home.delete', $value['id'])}}">Delete</a>
+                    <a href="{{route('member.rent', $value['id'])}}">Rent</a>
                 </td>
             </tr>
             @endforeach

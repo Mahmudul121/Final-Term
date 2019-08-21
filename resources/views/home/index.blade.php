@@ -43,6 +43,9 @@
                         <a class="nav-link" href="{{route('home.allmember')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp; AllMember</h3></a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('home.allcar')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp; ViewCar</h3></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('home.update')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UpdateInfo</h3></a>
                     </li>
                     <li class="nav-item">

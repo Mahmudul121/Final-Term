@@ -37,13 +37,13 @@
     </style>
 
 
-    <title>UpdateInfo</title>
+    <title>Member</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('home.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Back</h3></a>
+                        <a class="nav-link" href="{{route('member.home')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back</h3></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Log out</h3></a>
@@ -53,36 +53,31 @@
                    
             
                 </ul>
-            </nav> 
-            <form method="post">
-                {{csrf_field()}}
-            <table class="abs" width="60%" align="center">
-			<tr>
-				<td>Username: </td>
-				<td><input type="text" name="username" value="{{$data['name']}}" required></td>
-				<td></td>
-			</tr>
+            </nav>
+    <form method="post">
+        {{csrf_field()}}
+        <h1 align="center">Payment Details</h1>
+        <table class="abs"  width="60%" align="center">
+            <tr>
+                <td>Email</td>
+                <td><input type="email" readonly value="{{session('email')}}" name="email" required></td>
+            </tr>
             <tr><td>&nbsp;</td></tr>
-			<tr>
-				<td>Email: </td>
-				<td><input type="email" name="email" value="{{$data['email']}}" required></td>
-				<td> </td>
-			</tr>
-            
-            <tr><td>&nbsp;</td></tr>
-			<tr>
-				<td>Password: </td>
-				<td><input type="password" name="password" value="{{$data['password']}}" required> </td>
-				<td></td>
-			</tr>
-            <tr><td>&nbsp;</td></tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" name="submit" value="Submit"> </td>
-				<td></td>
-			</tr>
-		</table>   
-        </form>
-                        
+            <tr>
+                <td>Card No</td>
+                <td><input type="number" name="cardno" placeholder="Enter account no" required></td>
+            </tr>
+             <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td>Total cost</td>
+                <td><input type="number" name="cost" required></td>
+            </tr>
+             <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="payment" value="Payment"></td>
+            </tr>
+        </table>
+    </form>                 
 </body>
 </html>

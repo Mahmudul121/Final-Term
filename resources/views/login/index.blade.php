@@ -43,9 +43,6 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href=""><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registration</h3></a>
-                    </li>
                    
                    
             
@@ -57,6 +54,7 @@
             <tr>
                 <td> Email: </td>
                 <td><input type="text" name="email" required> </td>
+                <td>{{session('msg')}}</td>
             </tr>
             <tr><td>&nbsp;</td>
             </tr>

@@ -37,13 +37,13 @@
     </style>
 
 
-    <title>UpdateInfo</title>
+    <title>Rent History</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('home.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Back</h3></a>
+                        <a class="nav-link" href="{{route('member.home')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back</h3></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Log out</h3></a>
@@ -53,36 +53,30 @@
                    
             
                 </ul>
-            </nav> 
-            <form method="post">
-                {{csrf_field()}}
-            <table class="abs" width="60%" align="center">
-			<tr>
-				<td>Username: </td>
-				<td><input type="text" name="username" value="{{$data['name']}}" required></td>
-				<td></td>
-			</tr>
-            <tr><td>&nbsp;</td></tr>
-			<tr>
-				<td>Email: </td>
-				<td><input type="email" name="email" value="{{$data['email']}}" required></td>
-				<td> </td>
-			</tr>
-            
-            <tr><td>&nbsp;</td></tr>
-			<tr>
-				<td>Password: </td>
-				<td><input type="password" name="password" value="{{$data['password']}}" required> </td>
-				<td></td>
-			</tr>
-            <tr><td>&nbsp;</td></tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" name="submit" value="Submit"> </td>
-				<td></td>
-			</tr>
-		</table>   
-        </form>
-                        
+            </nav>
+    <form method="post">
+        {{csrf_field()}}
+     <table class="abs" border="2" width="60%" align="center">
+            <tr>
+            <td align="center">ID</td>
+            <td align="center">Email</td>
+            <td align="center">carname</td>
+            <td align="center">Cost/$</td>
+            <td align="center">Total cost</td>
+            <td align="center">Total day</td>
+            </tr>
+            @foreach($data as $value)
+            <tr>
+                <td align="center">{{$value['id']}}</td>
+                <td align="center">{{$value['email']}}</td>
+                <td align="center">{{$value['carname']}}</td>
+                <td align="center">{{$value['perdaycost']}}</td>
+                <td align="center">{{$value['totalcost']}}</td>
+                <td align="center">{{$value['totalday']}}</td>
+            </tr>
+            @endforeach
+                
+        </table>  
+        </form>                 
 </body>
 </html>

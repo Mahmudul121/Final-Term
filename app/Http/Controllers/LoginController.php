@@ -25,7 +25,7 @@ class LoginController extends Controller
 			}
 			elseif ($result[0]->type=="Member") {
 				$req->session()->put('email', $req->email);
-				return redirect()->route('member.index');
+				return redirect()->route('member.home');
 			}
 		}
 		else

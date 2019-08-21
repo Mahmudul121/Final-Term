@@ -43,6 +43,18 @@
                         <a class="nav-link" href="{{route('member.update')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UpdateInfo</h3></a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('member.rentall')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RentCars</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('member.renthistory')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RentHistory</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('member.viewcar')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Car</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('member.home')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back</h3></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Log out</h3></a>
                     </li>
                     
@@ -50,7 +62,7 @@
                    
             
                 </ul>
-            </nav>    
+            </nav>
                         
 </body>
 </html>
